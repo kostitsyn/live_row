@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Live Row</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="../set_loop.js"></script>
+	<script type="text/javascript">
+	var crawl = false;
+	function start() {
+		if (!crawl) crawl = setLoop('live_row',{
+			'step': 1,
+			'time_step': 2
+		});
+	}
+	function stop() {
+		if (crawl) crawl.stop();
+		crawl = false;
+	}
+	</script>
+</head>
+<body onload="start()">
+<div id="live_row">
+	<div class="wrap">
+		<p id="p1">I</p>
+		<p id="p2">II</p>
+		<p id="p3">III</p>
+		<p id="p4">IV</p>
+		<p id="p5">V</p>
+	</div>
+</div>
+<div class="controls">
+	<button onclick="start()">Start</button>
+	<button onclick="stop()">Stop</button>
+</div>
+</body>
+</html>
